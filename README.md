@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
 
 <!-- Badges at Top -->
 <p>
@@ -186,7 +186,7 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 ---
 
 <div align="center">
-Made with ❤️ by the BookFlick Team
+Made with ❤️ by Mahmoud Mohamed
 <br/>
 <b>© 2026 BookFlick</b>
 </div>
