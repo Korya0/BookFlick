@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 import 'package:bookna_app/core/presentation/widget/image_with_shimmer.dart';
 import 'package:bookna_app/core/resources/theme/app_colors.dart';
 import 'package:bookna_app/core/resources/constants/app_values.dart';
@@ -41,7 +42,7 @@ class SectionListViewCard extends StatelessWidget {
               if (book.title != null)
                 Text(
                   book.title as String,
-                  maxLines: 2,
+                  maxLines: AppConstants.maxLines2,
                   overflow: TextOverflow.ellipsis,
                   style: textTheme.bodyMedium,
                 ),

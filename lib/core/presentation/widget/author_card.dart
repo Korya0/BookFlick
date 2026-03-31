@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 import 'package:bookna_app/core/presentation/widget/image_with_shimmer.dart';
 import 'package:bookna_app/core/resources/constants/app_values.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class AuthorCard extends StatelessWidget {
             Text(
               name,
               style: textTheme.bodyLarge,
-              maxLines: 2,
+              maxLines: AppConstants.maxLines2,
               textAlign: TextAlign.center,
             ),
           ],

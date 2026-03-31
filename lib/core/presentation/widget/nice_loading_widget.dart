@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 import 'package:bookna_app/core/resources/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:bookna_app/core/resources/constants/app_strings.dart';
@@ -19,7 +20,7 @@ class _NiceLoadingWidgetState extends State<NiceLoadingWidget>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: AppConstants.midAnimationDuration),
       vsync: this,
     )..repeat(reverse: true);
 

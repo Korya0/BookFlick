@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 import 'package:another_flushbar/flushbar.dart';
 import 'package:bookna_app/core/resources/theme/app_colors.dart';
 import 'package:bookna_app/core/resources/router/app_routes.dart';
@@ -20,7 +21,7 @@ Future<void> showTopFlushbar(BuildContext context, String message) async {
   Flushbar(
     message: message,
     flushbarPosition: FlushbarPosition.TOP,
-    duration: const Duration(seconds: 1),
+    duration: const Duration(seconds: AppConstants.defaultDelayDuration),
     backgroundColor: AppColors.secondaryBackground,
     margin: const EdgeInsets.all(AppMargin.m8),
     borderRadius: BorderRadius.circular(AppRadius.r10),

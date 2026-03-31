@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 import 'package:bookna_app/core/presentation/widget/section_title.dart';
 import 'package:bookna_app/core/resources/constants/app_strings.dart';
 import 'package:bookna_app/core/resources/constants/app_values.dart';
@@ -19,7 +20,7 @@ class OverviewSection extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: AppPadding.p16),
           child: ReadMoreText(
             overview,
-            trimLines: 5,
+            trimLines: AppConstants.detailsOverviewTrimLines,
             trimMode: TrimMode.Line,
             trimCollapsedText: AppStrings.showMore,
             trimExpandedText: AppStrings.showLess,

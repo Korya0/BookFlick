@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_values.dart';
 import 'package:bookna_app/core/resources/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -30,7 +31,7 @@ ThemeData getApplicationTheme() {
 
     // text theme
     textTheme: TextTheme(
-      titleMedium: _getTextStyle(fontSize: 20, color: AppColors.secondaryText),
+      titleMedium: _getTextStyle(fontSize: AppSize.s20, color: AppColors.secondaryText),
       titleSmall: _getTextStyle(fontSize: 18, color: AppColors.secondaryText),
       bodyLarge: _getTextStyle(
         fontSize: 14,

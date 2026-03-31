@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 import 'package:bookna_app/core/presentation/widget/favorite_icon_bloc_builder.dart';
 import 'package:bookna_app/core/presentation/widget/image_with_shimmer.dart';
 import 'package:bookna_app/core/resources/theme/app_colors.dart';
@@ -50,7 +51,7 @@ class VerticalListViewCard extends StatelessWidget {
                       padding: const EdgeInsets.only(top: AppPadding.p6),
                       child: Text(
                         book.title as String, // Use book data
-                        maxLines: 3,
+                        maxLines: AppConstants.maxLines3,
                         overflow: TextOverflow.ellipsis,
                         style: textTheme.titleSmall,
                       ),
@@ -83,7 +84,7 @@ class VerticalListViewCard extends StatelessWidget {
                       padding: const EdgeInsets.only(top: AppPadding.p14),
                       child: Text(
                         book.description as String,
-                        maxLines: 2,
+                        maxLines: AppConstants.maxLines2,
                         overflow: TextOverflow.ellipsis,
                         style: textTheme.bodyLarge,
                       ),

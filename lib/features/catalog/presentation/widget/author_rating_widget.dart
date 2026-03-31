@@ -1,10 +1,11 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:bookna_app/core/resources/theme/app_colors.dart';
-import 'package:bookna_app/core/resources/constants/app_values.dart';
-import 'package:flutter/material.dart';
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 import 'package:bookna_app/core/resources/constants/app_strings.dart';
+import 'package:bookna_app/core/resources/constants/app_values.dart';
+import 'package:bookna_app/core/resources/theme/app_colors.dart';
 import 'package:bookna_app/features/catalog/domain/entities/author.dart';
+import 'package:flutter/material.dart';
 
 class AuthorRatingWidget extends StatelessWidget {
   final Author author;
@@ -14,7 +15,7 @@ class AuthorRatingWidget extends StatelessWidget {
   const AuthorRatingWidget({
     super.key,
     required this.author,
-    this.animationDuration = const Duration(milliseconds: 3000),
+    this.animationDuration = const Duration(milliseconds: AppConstants.longAnimationDuration),
     this.animationCurve = Curves.easeOutBack,
   });
 
@@ -39,7 +40,7 @@ class AuthorRatingWidget extends StatelessWidget {
         children: [
           const Text(
             AppStrings.ratings,
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: AppSize.s20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppSize.s8),
           if (ratingAverage != null || ratingCount > 0) ...[
@@ -207,7 +208,7 @@ class StarRatingWidget extends StatelessWidget {
     super.key,
     required this.rating,
     this.animate = false,
-    this.duration = const Duration(milliseconds: 500),
+    this.duration = const Duration(milliseconds: AppConstants.shortAnimationDuration),
     this.delay = 0,
   });
 

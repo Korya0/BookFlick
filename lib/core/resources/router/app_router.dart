@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_strings.dart';
 import 'package:bookna_app/core/presentation/views/main_view.dart';
 import 'package:bookna_app/core/resources/router/app_routes.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
@@ -119,7 +120,7 @@ class AppRouter {
     ],
     errorPageBuilder:
         (context, state) => const MaterialPage(
-          child: Scaffold(body: Center(child: Text('Page not found'))),
+          child: Scaffold(body: Center(child: Text(AppStrings.pageNotFound))),
         ),
   );
 

@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 import 'package:bookna_app/core/resources/constants/app_values.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class VerticalListView extends StatefulWidget {
     required this.itemBuilder,
     required this.onScrollEnd,
     this.controller,
-    this.loadMoreThreshold = 0.7,
+    this.loadMoreThreshold = AppConstants.loadMoreThreshold,
   });
 
   @override
@@ -68,7 +69,7 @@ class _VerticalListViewState extends State<VerticalListView> {
       widget.onScrollEnd();
 
       // إعادة تعيين بعد تأخير لمنع تكرار الاستدعاء
-      Future.delayed(const Duration(seconds: 1), () {
+      Future.delayed(const Duration(seconds: AppConstants.defaultDelayDuration), () {
         _hasTriggeredLoadMore = false;
       });
     }

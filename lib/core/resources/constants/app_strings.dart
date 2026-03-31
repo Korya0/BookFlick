@@ -11,6 +11,7 @@ class AppStrings {
   static const String tryAgain = 'Try again';
   static const String tryAgainLater = 'Please try again later';
   static const String unknown = 'Unknown';
+  static const String pageNotFound = 'Page not found';
 
   // Book Related
   static const String books = 'Books';

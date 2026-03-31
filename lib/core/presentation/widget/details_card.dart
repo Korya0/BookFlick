@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 // ignore_for_file: use_build_context_synchronously, deprecated_member_use
 
 import 'package:bookna_app/core/presentation/widget/arrow_back_ios_buttom.dart';
@@ -53,7 +54,7 @@ class DetailsCard extends StatelessWidget {
                                 if (book.title != null)
                                   Text(
                                     book.title as String,
-                                    maxLines: 2,
+                                    maxLines: AppConstants.maxLines2,
                                     overflow: TextOverflow.ellipsis,
                                     style: textTheme.titleMedium,
                                   ),
@@ -114,7 +115,7 @@ class DetailsCard extends StatelessWidget {
                             },
                             borderRadius: BorderRadius.circular(AppRadius.r25),
                             child: AnimatedContainer(
-                              duration: const Duration(milliseconds: 200),
+                              duration: const Duration(milliseconds: AppConstants.fastAnimationDuration),
                               height: AppSize.s40,
                               width: AppSize.s35,
                               decoration: const BoxDecoration(

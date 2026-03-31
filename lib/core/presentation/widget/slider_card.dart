@@ -45,7 +45,7 @@ class SliderCard extends StatelessWidget {
                     if (book.title != null)
                       Text(
                         book.title as String,
-                        maxLines: 2,
+                        maxLines: AppConstants.maxLines2,
                         style: textTheme.titleMedium,
                       ),
 

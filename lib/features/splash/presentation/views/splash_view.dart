@@ -1,8 +1,9 @@
-import 'package:bookna_app/core/resources/theme/app_colors.dart';
 import 'package:bookna_app/core/resources/constants/app_constants.dart';
-import 'package:bookna_app/core/resources/router/app_routes.dart';
+import 'package:bookna_app/core/resources/constants/app_assets.dart';
 import 'package:bookna_app/core/resources/constants/app_strings.dart';
 import 'package:bookna_app/core/resources/constants/app_values.dart';
+import 'package:bookna_app/core/resources/router/app_routes.dart';
+import 'package:bookna_app/core/resources/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
   void _initializeAnimations() {
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: AppConstants.splashDuration),
     );
 
     _scaleAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
@@ -84,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen>
             ScaleTransition(
               scale: _scaleAnimation,
               child: Image.asset(
-                AppConstants.splashImage,
+                AppAssets.splashImage,
                 width: AppSize.s150,
                 height: AppSize.s150,
               ),
@@ -97,7 +98,7 @@ class _SplashScreenState extends State<SplashScreen>
                 child: const Text(
                   AppStrings.appTitle,
                   style: TextStyle(
-                    fontSize: 32,
+                    fontSize: AppSize.s32,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -109,7 +110,7 @@ class _SplashScreenState extends State<SplashScreen>
               opacity: _fadeAnimation,
               child: const Text(
                 AppStrings.appSubtitle,
-                style: TextStyle(fontSize: 16, color: Colors.white70),
+                style: TextStyle(fontSize: AppSize.s16, color: Colors.white70),
               ),
             ),
           ],

@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:bookna_app/core/resources/theme/app_colors.dart';
@@ -14,7 +15,7 @@ class AuthorReadingStatsWidget extends StatefulWidget {
   const AuthorReadingStatsWidget({
     super.key,
     required this.author,
-    this.animationDuration = const Duration(milliseconds: 1000),
+    this.animationDuration = const Duration(milliseconds: AppConstants.midAnimationDuration),
     this.animationCurve = Curves.easeOutBack,
   });
 
@@ -76,7 +77,7 @@ class _AuthorReadingStatsWidgetState extends State<AuthorReadingStatsWidget>
         children: [
           const Text(
             AppStrings.readingStats,
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: AppSize.s20, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppSize.s16),
           if (stats.any((stat) => stat.value > 0)) ...[

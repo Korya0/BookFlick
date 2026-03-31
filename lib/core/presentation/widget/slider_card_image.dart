@@ -1,3 +1,4 @@
+import 'package:bookna_app/core/resources/constants/app_constants.dart';
 import 'package:bookna_app/core/presentation/widget/image_with_shimmer.dart';
 import 'package:bookna_app/core/resources/theme/app_colors.dart';
 import 'package:bookna_app/core/resources/constants/app_values.dart';
@@ -17,7 +18,7 @@ class SliderCardImage extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [AppColors.black, AppColors.black, AppColors.transparent],
-          stops: [0.3, 0.5, 1],
+          stops: AppConstants.defaultGradientStops,
         ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
       },
       child: ImageWithShimmer(

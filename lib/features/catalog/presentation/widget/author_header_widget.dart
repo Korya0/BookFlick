@@ -49,14 +49,14 @@ class AuthorHeaderWidget extends StatelessWidget {
               if (author.topWork != null) ...[
                 Text(
                   "${AppStrings.topWork}: ${author.topWork}",
-                  style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                  style: TextStyle(fontSize: AppSize.s16, color: Colors.grey[700]),
                 ),
                 const SizedBox(height: AppSize.s8),
               ],
               if (author.workCount != null) ...[
                 Text(
                   '${AppStrings.works}: ${author.workCount}',
-                  style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                  style: TextStyle(fontSize: AppSize.s16, color: Colors.grey[700]),
                 ),
                 const SizedBox(height: AppSize.s8),
               ],
