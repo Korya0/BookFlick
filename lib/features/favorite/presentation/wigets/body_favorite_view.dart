@@ -1,6 +1,5 @@
 import 'package:bookna_app/core/presentation/widget/vertical_list_view.dart';
 import 'package:bookna_app/core/presentation/widget/vertical_list_view_card.dart';
-import 'package:bookna_app/core/utils/functions/functions.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:bookna_app/features/favorite/presentation/controller/favorite_cubit.dart';
 import 'package:bookna_app/features/favorite/presentation/wigets/empty_favorite_text.dart';
@@ -22,9 +21,15 @@ class BodyFavoriteView extends StatelessWidget {
           itemBuilder:
               (context, index) =>
                   VerticalListViewCard(book: favoriteBooks[index]),
-          onScrollEnd: () => fetchMoreBooks(context),
+          onScrollEnd: () => _fetchMoreBooks(context),
         );
       },
     );
+  }
+
+  void _fetchMoreBooks(BuildContext context) {
+    if (context.read<FavoriteCubit>().state.isNotEmpty) {
+      context.read<FavoriteCubit>();
+    }
   }
 }

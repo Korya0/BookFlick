@@ -1,8 +1,8 @@
 import 'package:bookna_app/core/presentation/widget/section_list_view.dart';
 import 'package:bookna_app/core/presentation/widget/section_list_view_card.dart';
 import 'package:bookna_app/core/presentation/widget/section_title.dart';
-import 'package:bookna_app/core/resources/app_strings.dart';
-import 'package:bookna_app/core/resources/app_values.dart';
+import 'package:bookna_app/core/resources/constants/app_strings.dart';
+import 'package:bookna_app/core/resources/constants/app_values.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:flutter/material.dart';
 

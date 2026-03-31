@@ -1,7 +1,7 @@
 import 'package:bookna_app/core/presentation/widget/error_text.dart';
 import 'package:bookna_app/core/presentation/widget/loading_widget.dart';
-import 'package:bookna_app/core/resources/app_values.dart';
-import 'package:bookna_app/core/utils/setup_services_locator.dart';
+import 'package:bookna_app/core/resources/constants/app_values.dart';
+import 'package:bookna_app/core/di/di_locator.dart';
 import 'package:bookna_app/features/catalog/data/repo/books_repo_impl.dart';
 import 'package:bookna_app/features/catalog/domain/usecase/get_books_by_title_use_case.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/search_cubit.dart';

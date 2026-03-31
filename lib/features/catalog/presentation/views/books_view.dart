@@ -1,5 +1,5 @@
 import 'package:bookna_app/core/presentation/views/error_page.dart';
-import 'package:bookna_app/core/resources/app_strings.dart';
+import 'package:bookna_app/core/resources/constants/app_strings.dart';
 import 'package:bookna_app/features/catalog/presentation/widget/popular_books_section.dart';
 import 'package:bookna_app/features/catalog/presentation/widget/slider_section.dart';
 import 'package:bookna_app/features/catalog/presentation/widget/top_rated_books_section.dart';

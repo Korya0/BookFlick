@@ -1,10 +1,10 @@
-import 'package:bookna_app/core/resources/app_strings.dart';
+import 'package:bookna_app/core/resources/constants/app_strings.dart';
 import 'package:bookna_app/features/catalog/presentation/widget/similar_books_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bookna_app/core/presentation/views/error_page.dart';
 import 'package:bookna_app/core/presentation/widget/loading_widget.dart';
-import 'package:bookna_app/core/utils/setup_services_locator.dart';
+import 'package:bookna_app/core/di/di_locator.dart';
 import 'package:bookna_app/features/catalog/data/repo/books_repo_impl.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:bookna_app/features/catalog/domain/usecase/get_books_by_category_path_use_case.dart';

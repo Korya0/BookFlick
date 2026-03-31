@@ -1,8 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:bookna_app/core/resources/app_colors.dart';
-import 'package:bookna_app/core/resources/app_strings.dart';
-import 'package:bookna_app/core/resources/app_values.dart';
+import 'package:bookna_app/core/resources/theme/app_colors.dart';
+import 'package:bookna_app/core/resources/constants/app_strings.dart';
+import 'package:bookna_app/core/resources/constants/app_values.dart';
 import 'package:bookna_app/features/catalog/domain/entities/author.dart';
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,5 @@
-import 'package:bookna_app/core/resources/app_values.dart';
-import 'package:bookna_app/core/utils/setup_services_locator.dart';
+import 'package:bookna_app/core/resources/constants/app_values.dart';
+import 'package:bookna_app/core/di/di_locator.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/author_cubit/author_cubit.dart';
 import 'package:bookna_app/features/catalog/presentation/widget/author_additional_info_widget.dart';
 import 'package:bookna_app/features/catalog/presentation/widget/author_header_widget.dart';

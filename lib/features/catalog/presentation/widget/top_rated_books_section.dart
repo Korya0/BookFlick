@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:bookna_app/core/presentation/widget/section_header.dart';
 import 'package:bookna_app/core/presentation/widget/section_list_view.dart';
 import 'package:bookna_app/core/presentation/widget/section_list_view_card.dart';
-import 'package:bookna_app/core/resources/app_routes.dart';
-import 'package:bookna_app/core/resources/app_strings.dart';
-import 'package:bookna_app/core/resources/app_values.dart';
+import 'package:bookna_app/core/resources/router/app_routes.dart';
+import 'package:bookna_app/core/resources/constants/app_strings.dart';
+import 'package:bookna_app/core/resources/constants/app_values.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/top_rated_cubit/top_rated_cubit.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/top_rated_cubit/top_rated_state.dart';
 

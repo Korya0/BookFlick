@@ -1,5 +1,5 @@
-import 'package:bookna_app/core/resources/app_routes.dart';
-import 'package:bookna_app/core/resources/app_strings.dart';
+import 'package:bookna_app/core/resources/router/app_routes.dart';
+import 'package:bookna_app/core/resources/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

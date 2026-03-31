@@ -1,5 +1,5 @@
 import 'package:bookna_app/core/presentation/views/main_view.dart';
-import 'package:bookna_app/core/resources/app_routes.dart';
+import 'package:bookna_app/core/resources/router/app_routes.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:bookna_app/features/catalog/presentation/views/author_info_view.dart';
 import 'package:bookna_app/features/catalog/presentation/views/book_details_view.dart';

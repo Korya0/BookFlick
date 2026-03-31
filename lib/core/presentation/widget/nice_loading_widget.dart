@@ -1,7 +1,7 @@
-import 'package:bookna_app/core/resources/app_colors.dart';
+import 'package:bookna_app/core/resources/theme/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:bookna_app/core/resources/app_strings.dart';
-import 'package:bookna_app/core/resources/app_values.dart';
+import 'package:bookna_app/core/resources/constants/app_strings.dart';
+import 'package:bookna_app/core/resources/constants/app_values.dart';
 
 class NiceLoadingWidget extends StatefulWidget {
   const NiceLoadingWidget({super.key});
