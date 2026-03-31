@@ -1,6 +1,6 @@
 import 'package:bookna_app/core/resources/app_colors.dart';
 import 'package:bookna_app/core/resources/app_values.dart';
-import 'package:bookna_app/features/books/domain/entities/book.dart';
+import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:bookna_app/features/favorite/presentation/controller/favorite_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

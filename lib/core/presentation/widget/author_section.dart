@@ -5,7 +5,7 @@ import 'package:bookna_app/core/presentation/widget/section_title.dart';
 import 'package:bookna_app/core/resources/app_routes.dart';
 import 'package:bookna_app/core/resources/app_strings.dart';
 import 'package:bookna_app/core/resources/app_values.dart';
-import 'package:bookna_app/features/books/domain/entities/book.dart';
+import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

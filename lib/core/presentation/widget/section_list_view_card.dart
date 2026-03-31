@@ -2,7 +2,7 @@ import 'package:bookna_app/core/presentation/widget/image_with_shimmer.dart';
 import 'package:bookna_app/core/resources/app_colors.dart';
 import 'package:bookna_app/core/resources/app_values.dart';
 import 'package:bookna_app/core/utils/functions/route_function.dart';
-import 'package:bookna_app/features/books/domain/entities/book.dart';
+import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:flutter/material.dart';
 
 class SectionListViewCard extends StatelessWidget {

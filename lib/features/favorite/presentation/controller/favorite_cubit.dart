@@ -1,5 +1,5 @@
 import 'package:bookna_app/core/resources/app_strings.dart';
-import 'package:bookna_app/features/books/domain/entities/book.dart';
+import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
