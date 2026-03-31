@@ -68,8 +68,6 @@ class AppStrings {
   static const String favoriteEmpty = 'Favorites are empty';
   static const String favoriteText =
       'After adding books to favorites, they will appear here.';
-  static const String favoritesBox = 'favorites_box';
-  static const String kfavoritesBox = 'favorites_box';
   static const String searchHint = 'Search for books, authors...';
   static const String searchText =
       'Search for books and authors. We will show you the best results.';

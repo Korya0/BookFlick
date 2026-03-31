@@ -1,55 +1,60 @@
-import 'package:bookna_app/core/resources/constants/app_strings.dart';
+import 'package:bookna_app/core/di/di_locator.dart';
+import 'package:bookna_app/core/storage/storage_keys.dart';
+import 'package:bookna_app/core/storage/storage_service.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
 class FavoriteCubit extends Cubit<List<Book>> {
-  final Box<Book> _favoritesBox;
+  final IStorageService _storageService;
 
   FavoriteCubit()
-    : _favoritesBox = Hive.box<Book>(AppStrings.favoritesBox),
+    : _storageService = getIt.get<IStorageService>(),
       super([]) {
     loadFavorites();
     _setupListener();
   }
 
   void loadFavorites() {
-    final favorites = _favoritesBox.values.toList();
+    final favorites = _storageService.getAll<Book>(
+      boxName: StorageKeys.favoritesBox,
+    );
     emit(favorites);
   }
 
   void _setupListener() {
-    _favoritesBox.watch().listen((event) {
+    _storageService.watch(boxName: StorageKeys.favoritesBox).listen((event) {
       loadFavorites();
     });
   }
 
   Future<void> addToFavorites(Book book) async {
     if (!isFavorite(book)) {
-      await _favoritesBox.add(book);
+      await _storageService.add(book, boxName: StorageKeys.favoritesBox);
     }
   }
 
   Future<void> removeFromFavorites(Book book) async {
     final key = _getKeyForBook(book);
     if (key != null) {
-      await _favoritesBox.delete(key);
+      await _storageService.delete(key, boxName: StorageKeys.favoritesBox);
     }
   }
 
   Future<void> clearAllFavorites() async {
-    await _favoritesBox.clear();
+    await _storageService.clear(boxName: StorageKeys.favoritesBox);
   }
 
   bool isFavorite(Book book) {
     return state.any((b) => b.bookId == book.bookId);
   }
 
-  int? _getKeyForBook(Book book) {
-    final bookMap = _favoritesBox.toMap();
+  dynamic _getKeyForBook(Book book) {
+    final bookMap = _storageService.getMap<Book>(
+      boxName: StorageKeys.favoritesBox,
+    );
     for (final entry in bookMap.entries) {
       if (entry.value.bookId == book.bookId) {
-        return entry.key as int;
+        return entry.key;
       }
     }
     return null;

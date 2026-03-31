@@ -1,3 +1,5 @@
+import 'package:bookna_app/core/storage/hive_storage_service.dart';
+import 'package:bookna_app/core/storage/storage_service.dart';
 import 'package:bookna_app/features/catalog/data/datasource/author_remote_data_source_impl.dart';
 import 'package:bookna_app/features/catalog/data/datasource/books_remote_data_source.dart';
 import 'package:bookna_app/features/catalog/data/repo/author_repository_impl.dart';
@@ -12,6 +14,9 @@ import 'package:get_it/get_it.dart';
 final getIt = GetIt.instance;
 
 void setupServicesLocator() {
+  // Storage
+  getIt.registerLazySingleton<IStorageService>(() => HiveStorageService());
+
   // Dio
   getIt.registerLazySingleton(() => Dio());
 
