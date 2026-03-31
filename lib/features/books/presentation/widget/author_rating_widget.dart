@@ -69,7 +69,7 @@ class AuthorRatingWidget extends StatelessWidget {
               duration: animationDuration,
               curve: Curves.elasticOut,
               builder:
-                  (_, value, __) => Text(
+                  (_, value, _) => Text(
                     value.toStringAsFixed(1),
                     style: const TextStyle(
                       fontSize: 36,
@@ -98,7 +98,7 @@ class AuthorRatingWidget extends StatelessWidget {
                   tween: IntTween(begin: 0, end: ratingCount),
                   duration: animationDuration,
                   builder:
-                      (_, value, __) => Text(
+                      (_, value, _) => Text(
                         '${AppStrings.basedOn} $value ${AppStrings.ratings.toLowerCase()}',
                         style: TextStyle(color: Colors.grey[600]),
                       ),
@@ -160,7 +160,7 @@ class AuthorRatingWidget extends StatelessWidget {
                 duration: animationDuration,
                 curve: animationCurve,
                 builder:
-                    (_, value, __) => FractionallySizedBox(
+                    (_, value, _) => FractionallySizedBox(
                       widthFactor: value,
                       alignment: Alignment.centerLeft,
                       child: Container(
@@ -181,7 +181,7 @@ class AuthorRatingWidget extends StatelessWidget {
               tween: Tween(begin: 0, end: percentage),
               duration: animationDuration,
               builder:
-                  (_, value, __) => Text(
+                  (_, value, _) => Text(
                     '${value.toStringAsFixed(1)}%',
                     style: TextStyle(
                       color: AppColors.getRatingColor(stars).withOpacity(0.8),

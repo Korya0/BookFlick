@@ -20,7 +20,7 @@ void setupServicesLocator() {
     () => AuthorRemoteDataSourceImpl(getIt()),
   );
   getIt.registerLazySingleton<BooksRemoteDataSource>(
-    () => BooksRemoteDataSourceImpl(),
+    () => BooksRemoteDataSourceImpl(getIt()),
   );
 
   // Repositories

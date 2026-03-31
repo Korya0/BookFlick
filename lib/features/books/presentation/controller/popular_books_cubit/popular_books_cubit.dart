@@ -14,32 +14,18 @@ class PopularBooksCubit extends Cubit<PopularBooksState> {
 
   Future<void> getPopularBooksLimited() async {
     emit(PopularBooksLoading());
-    List<Book> allBooks = [];
     const int booksLimit = 40;
-    int page = 1;
-    bool hasMore = true;
 
-    while (allBooks.length < booksLimit && hasMore) {
-      final result = await getAllPopularBooksUseCase(page);
-      result.fold(
-        (failure) {
-          emit(PopularBooksError(failure.message.toString()));
-          hasMore = false;
-        },
-        (newBooks) {
-          if (newBooks.isEmpty) {
-            hasMore = false;
-          } else {
-            allBooks.addAll(newBooks);
-            page++;
-          }
-        },
-      );
-    }
-    // ignore: unnecessary_this
-    this.books = allBooks.take(booksLimit).toList();
-    // ignore: unnecessary_this
-    emit(PopularBooksLoaded(this.books));
+    final result = await getAllPopularBooksUseCase(1);
+    result.fold(
+      (failure) {
+        emit(PopularBooksError(failure.message.toString()));
+      },
+      (newBooks) {
+        books = newBooks.take(booksLimit).toList();
+        emit(PopularBooksLoaded(books));
+      },
+    );
   }
 
   Future<void> getPopularBooks({bool isInitialFetch = false}) async {

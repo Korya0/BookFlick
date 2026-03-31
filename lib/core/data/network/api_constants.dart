@@ -1,6 +1,6 @@
 class ApiConstants {
   static const baseUrl = 'https://www.googleapis.com/books/v1';
-  static const itemsPerPage = 10;
+  static const itemsPerPage = 40;
 
   static const String baseThumbnailUrl =
       'https://books.google.com/books/publisher/content';

@@ -14,7 +14,7 @@ class BooksRepoImpl extends BooksRepo {
   @override
   Future<Either<Failure, List<Book>>> getBooks() async {
     try {
-      final result = await booksRemoteDataSource.getMovies();
+      final result = await booksRemoteDataSource.getBooks();
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.code.toString()));
@@ -26,7 +26,7 @@ class BooksRepoImpl extends BooksRepo {
   @override
   Future<Either<Failure, List<Book>>> getAllPopularBooks(int page) async {
     try {
-      final result = await booksRemoteDataSource.getAllPopularMovies(page);
+      final result = await booksRemoteDataSource.getAllPopularBooks(page);
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.code.toString()));
@@ -38,7 +38,7 @@ class BooksRepoImpl extends BooksRepo {
   @override
   Future<Either<Failure, List<Book>>> getAllTopRatedBooks(int page) async {
     try {
-      final result = await booksRemoteDataSource.getAllTopRatedMovies(page);
+      final result = await booksRemoteDataSource.getAllTopRatedBooks(page);
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(failure.errorMessageModel.code.toString()));

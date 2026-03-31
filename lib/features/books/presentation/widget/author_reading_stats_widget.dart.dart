@@ -140,7 +140,7 @@ class _AuthorReadingStatsWidgetState extends State<AuthorReadingStatsWidget>
                 duration: widget.animationDuration,
                 curve: widget.animationCurve,
                 builder:
-                    (_, value, __) => Text(
+                    (_, value, _) => Text(
                       value.toString(),
                       style: const TextStyle(
                         fontSize: 18,

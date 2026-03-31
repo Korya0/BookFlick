@@ -6,17 +6,21 @@ import 'package:bookna_app/features/books/domain/entities/book.dart';
 import 'package:dio/dio.dart';
 
 abstract class BooksRemoteDataSource {
-  Future<List<Book>> getMovies();
-  Future<List<Book>> getAllPopularMovies(int page);
-  Future<List<Book>> getAllTopRatedMovies(int page);
+  Future<List<Book>> getBooks();
+  Future<List<Book>> getAllPopularBooks(int page);
+  Future<List<Book>> getAllTopRatedBooks(int page);
   Future<List<Book>> getBooksBycategory(String category);
   Future<List<Book>> getBooksByTitle(String title);
 }
 
 class BooksRemoteDataSourceImpl extends BooksRemoteDataSource {
+  final Dio _dio;
+
+  BooksRemoteDataSourceImpl(this._dio);
+
   @override
-  Future<List<Book>> getMovies() async {
-    final response = await Dio().get(ApiConstants.getNewestBooksPath);
+  Future<List<Book>> getBooks() async {
+    final response = await _dio.get(ApiConstants.getNewestBooksPath);
     if (response.statusCode == 200) {
       List<Book> books = getBooksList(response.data);
       return books;
@@ -28,8 +32,8 @@ class BooksRemoteDataSourceImpl extends BooksRemoteDataSource {
   }
 
   @override
-  Future<List<Book>> getAllPopularMovies(int page) async {
-    final response = await Dio().get(ApiConstants.getPopularBooksPath(page));
+  Future<List<Book>> getAllPopularBooks(int page) async {
+    final response = await _dio.get(ApiConstants.getPopularBooksPath(page));
     if (response.statusCode == 200) {
       List<Book> books = getBooksList(response.data);
       return books;
@@ -41,8 +45,8 @@ class BooksRemoteDataSourceImpl extends BooksRemoteDataSource {
   }
 
   @override
-  Future<List<Book>> getAllTopRatedMovies(int page) async {
-    final response = await Dio().get(ApiConstants.getTopRatedBooksPath(page));
+  Future<List<Book>> getAllTopRatedBooks(int page) async {
+    final response = await _dio.get(ApiConstants.getTopRatedBooksPath(page));
     if (response.statusCode == 200) {
       List<Book> books = getBooksList(response.data);
       return books;
@@ -55,7 +59,7 @@ class BooksRemoteDataSourceImpl extends BooksRemoteDataSource {
 
   @override
   Future<List<Book>> getBooksBycategory(String category) async {
-    final response = await Dio().get(
+    final response = await _dio.get(
       ApiConstants.getBooksByCategoryPath(category),
     );
     if (response.statusCode == 200) {
@@ -70,7 +74,7 @@ class BooksRemoteDataSourceImpl extends BooksRemoteDataSource {
 
   @override
   Future<List<Book>> getBooksByTitle(String title) async {
-    final response = await Dio().get(ApiConstants.getBooksByTitlePath(title));
+    final response = await _dio.get(ApiConstants.getBooksByTitlePath(title));
     if (response.statusCode == 200) {
       List<Book> books = getBooksList(response.data);
       return books;

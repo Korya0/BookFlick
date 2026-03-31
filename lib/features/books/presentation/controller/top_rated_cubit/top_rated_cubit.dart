@@ -14,31 +14,18 @@ class TopRatedBooksCubit extends Cubit<TopRatedBooksState> {
 
   Future<void> getTopRatedBooksLimited([int page = 1]) async {
     emit(TopRatedBooksLoading());
-    List<Book> allBooks = [];
     const int booksLimit = 40;
-    bool hasMore = true;
 
-    while (allBooks.length < booksLimit && hasMore) {
-      final result = await getAllTopRatedBooksUseCase(page);
-      result.fold(
-        (failure) {
-          emit(TopRatedBooksError(failure.message.toString()));
-          hasMore = false;
-        },
-        (newBooks) {
-          if (newBooks.isEmpty) {
-            hasMore = false;
-          } else {
-            allBooks.addAll(newBooks);
-            page++;
-          }
-        },
-      );
-    }
-    // ignore: unnecessary_this
-    this.books = allBooks.take(booksLimit).toList();
-    // ignore: unnecessary_this
-    emit(TopRatedBooksLoaded(this.books));
+    final result = await getAllTopRatedBooksUseCase(page);
+    result.fold(
+      (failure) {
+        emit(TopRatedBooksError(failure.message.toString()));
+      },
+      (newBooks) {
+        books = newBooks.take(booksLimit).toList();
+        emit(TopRatedBooksLoaded(books));
+      },
+    );
   }
 
   Future<void> getTopRatedBooks({bool isInitialFetch = false}) async {

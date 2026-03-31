@@ -23,13 +23,12 @@ class ImageWithShimmer extends StatelessWidget {
       width: width,
       fit: BoxFit.cover,
       placeholder:
-          (_, __) => Shimmer.fromColors(
+          (_, _) => Shimmer.fromColors(
             baseColor: AppColors.shimmerBase,
             highlightColor: AppColors.shimmerHighlight,
             child: Container(height: height, color: AppColors.defaultIcon),
           ),
-      errorWidget:
-          (_, __, ___) => const Icon(Icons.error, color: AppColors.error),
+      errorWidget: (_, _, _) => const Icon(Icons.error, color: AppColors.error),
     );
   }
 }
