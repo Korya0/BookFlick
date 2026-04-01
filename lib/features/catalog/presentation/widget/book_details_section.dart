@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bookna_app/core/presentation/widget/details_card.dart';
+import 'package:bookna_app/core/presentation/widget/layout/details/details_card.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:bookna_app/features/catalog/presentation/widget/books_card_details.dart';
 

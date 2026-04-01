@@ -1,4 +1,4 @@
-import 'package:bookna_app/core/data/network/api_constants.dart';
+import 'package:bookna_app/core/api/network/api_constants.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'access_info.dart';
 import 'sale_info.dart';

@@ -1,5 +1,5 @@
-import 'package:bookna_app/core/resources/constants/app_strings.dart';
-import 'package:bookna_app/core/resources/constants/app_values.dart';
+import 'package:bookna_app/core/constants/app_strings.dart';
+import 'package:bookna_app/core/constants/app_values.dart';
 import 'package:flutter/material.dart';
 
 class SearchText extends StatelessWidget {

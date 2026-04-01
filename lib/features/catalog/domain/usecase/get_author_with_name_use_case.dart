@@ -1,5 +1,5 @@
-import 'package:bookna_app/core/data/error/failure.dart';
-import 'package:bookna_app/core/domain/usecase/base_use_case.dart';
+import 'package:bookna_app/core/api/error/failure.dart';
+import 'package:bookna_app/core/api/usecase/base_use_case.dart';
 import 'package:bookna_app/features/catalog/domain/entities/author.dart';
 import 'package:bookna_app/features/catalog/domain/repo/author_repo.dart';
 import 'package:dartz/dartz.dart';

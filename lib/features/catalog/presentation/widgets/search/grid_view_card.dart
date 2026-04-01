@@ -1,6 +1,6 @@
-import 'package:bookna_app/core/presentation/widget/image_with_shimmer.dart';
-import 'package:bookna_app/core/resources/constants/app_values.dart';
-import 'package:bookna_app/core/resources/router/route_function.dart';
+import 'package:bookna_app/core/presentation/widget/loading/image_with_shimmer.dart';
+import 'package:bookna_app/core/constants/app_values.dart';
+import 'package:bookna_app/core/router/route_function.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:flutter/material.dart';
 

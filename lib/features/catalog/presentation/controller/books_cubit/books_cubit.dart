@@ -1,4 +1,4 @@
-import 'package:bookna_app/core/domain/usecase/base_use_case.dart';
+import 'package:bookna_app/core/api/usecase/base_use_case.dart';
 import 'package:bookna_app/features/catalog/domain/usecase/get_books_use_case.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/books_cubit/books_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

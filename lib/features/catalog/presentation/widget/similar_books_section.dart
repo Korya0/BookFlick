@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bookna_app/core/presentation/widget/similar_section.dart';
+import 'package:bookna_app/core/presentation/widget/sections/similar_section.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/similar_cubit/similar_state.dart';
 
 class SimilarBooksSection extends StatelessWidget {

@@ -1,3 +1,5 @@
+import 'package:bookna_app/core/api/network/api_interceptor.dart';
+import 'package:bookna_app/core/network/connectivity_service.dart';
 import 'package:bookna_app/core/storage/hive_storage_service.dart';
 import 'package:bookna_app/core/storage/storage_service.dart';
 import 'package:bookna_app/features/catalog/data/datasource/author_remote_data_source_impl.dart';
@@ -17,8 +19,15 @@ void setupServicesLocator() {
   // Storage
   getIt.registerLazySingleton<IStorageService>(() => HiveStorageService());
 
+  // Network Connectivity
+  getIt.registerLazySingleton<IConnectivityService>(() => ConnectivityServiceImpl());
+
   // Dio
-  getIt.registerLazySingleton(() => Dio());
+  getIt.registerLazySingleton(() {
+    final dio = Dio();
+    dio.interceptors.add(ApiInterceptor());
+    return dio;
+  });
 
   // Data Sources
   getIt.registerLazySingleton<AuthorRemoteDataSource>(

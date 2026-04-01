@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:bookna_app/core/presentation/widget/section_header.dart';
-import 'package:bookna_app/core/presentation/widget/section_list_view.dart';
-import 'package:bookna_app/core/presentation/widget/section_list_view_card.dart';
-import 'package:bookna_app/core/resources/router/app_routes.dart';
-import 'package:bookna_app/core/resources/constants/app_strings.dart';
-import 'package:bookna_app/core/resources/constants/app_values.dart';
+import 'package:bookna_app/core/presentation/widget/layout/section_header.dart';
+import 'package:bookna_app/core/presentation/widget/lists/section_list_view.dart';
+import 'package:bookna_app/core/presentation/widget/cards/section_list_view_card.dart';
+import 'package:bookna_app/core/router/app_routes.dart';
+import 'package:bookna_app/core/constants/app_strings.dart';
+import 'package:bookna_app/core/constants/app_values.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/popular_books_cubit/popular_books_cubit.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/popular_books_cubit/popular_books_state.dart';
 

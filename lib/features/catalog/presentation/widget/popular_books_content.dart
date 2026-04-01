@@ -1,8 +1,7 @@
-
-import 'package:bookna_app/core/presentation/widget/loading_widget.dart';
-import 'package:bookna_app/core/presentation/widget/nice_loading_widget.dart';
-import 'package:bookna_app/core/presentation/widget/vertical_list_view.dart';
-import 'package:bookna_app/core/presentation/widget/vertical_list_view_card.dart';
+import 'package:bookna_app/core/presentation/widget/loading/loading_widget.dart';
+import 'package:bookna_app/core/presentation/widget/loading/nice_loading_widget.dart';
+import 'package:bookna_app/core/presentation/widget/lists/vertical_list_view.dart';
+import 'package:bookna_app/core/presentation/widget/cards/vertical_card/vertical_list_view_card.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/popular_books_cubit/popular_books_cubit.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/popular_books_cubit/popular_books_state.dart';
 import 'package:flutter/material.dart';
@@ -35,11 +34,7 @@ class _PopularBooksContentState extends State<PopularBooksContent> {
     if (!_isLoadingMore) {
       _isLoadingMore = true;
       context.read<PopularBooksCubit>().getPopularBooks().then((_) {
-        if (mounted) {
-          setState(() {
-            _isLoadingMore = false;
-          });
-        }
+        if (mounted) setState(() => _isLoadingMore = false);
       });
     }
   }
@@ -48,42 +43,25 @@ class _PopularBooksContentState extends State<PopularBooksContent> {
   Widget build(BuildContext context) {
     return BlocConsumer<PopularBooksCubit, PopularBooksState>(
       listener: (context, state) {
-        if (state is PopularBooksError) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(state.message)));
-        }
+        if (state is PopularBooksError) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.message)));
       },
       builder: (context, state) {
-        if (state is PopularBooksLoading) {
-          return const LoadingWidget();
-        }
-
-        final books =
-            state is PopularBooksLoaded
-                ? state.books
-                : (state as PopularBooksLoadingMore).books;
-
-        return Stack(
-          children: [
-            VerticalListView(
-              controller: _scrollController,
-              itemCount: books.length,
-              itemBuilder:
-                  (context, index) => VerticalListViewCard(book: books[index]),
-              onScrollEnd: _loadMoreBooks,
-              loadMoreThreshold: 0.7, // تحديد 70% هنا
-            ),
-            if (state is PopularBooksLoadingMore)
-              const Positioned(
-                bottom: 16.0,
-                left: 0,
-                right: 0,
-                child: NiceLoadingWidget(),
-              ),
-          ],
-        );
+        if (state is PopularBooksLoading) return const LoadingWidget();
+        final books = state is PopularBooksLoaded ? state.books : (state as PopularBooksLoadingMore).books;
+        return _buildList(books, state is PopularBooksLoadingMore);
       },
     );
   }
+
+  Widget _buildList(List books, bool isLoadingMore) => Stack(
+        children: [
+          VerticalListView(
+            controller: _scrollController,
+            itemCount: books.length,
+            itemBuilder: (context, index) => VerticalListViewCard(book: books[index]),
+            onScrollEnd: _loadMoreBooks,
+          ),
+          if (isLoadingMore) const Positioned(bottom: 16.0, left: 0, right: 0, child: NiceLoadingWidget()),
+        ],
+      );
 }

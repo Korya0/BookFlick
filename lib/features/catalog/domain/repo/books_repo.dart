@@ -1,4 +1,4 @@
-import 'package:bookna_app/core/data/error/failure.dart';
+import 'package:bookna_app/core/api/error/failure.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:dartz/dartz.dart';
 

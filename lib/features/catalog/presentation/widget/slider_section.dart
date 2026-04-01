@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bookna_app/core/presentation/widget/custom_slider.dart';
-import 'package:bookna_app/core/presentation/widget/slider_card.dart';
+import 'package:bookna_app/core/presentation/widget/others/custom_slider.dart';
+import 'package:bookna_app/core/presentation/widget/cards/slider_card.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/books_cubit/books_cubit.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/books_cubit/books_state.dart';
 

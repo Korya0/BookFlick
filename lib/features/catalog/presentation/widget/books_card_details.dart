@@ -1,5 +1,5 @@
-import 'package:bookna_app/core/presentation/widget/circle_dot.dart';
-import 'package:bookna_app/core/resources/constants/app_strings.dart';
+import 'package:bookna_app/core/presentation/widget/others/circle_dot.dart';
+import 'package:bookna_app/core/constants/app_strings.dart';
 import 'package:bookna_app/core/utils/format_date.dart';
 import 'package:bookna_app/features/catalog/domain/entities/book.dart';
 import 'package:flutter/material.dart';

@@ -1,13 +1,13 @@
-import 'package:bookna_app/core/resources/constants/app_values.dart';
+import 'package:bookna_app/core/constants/app_values.dart';
 import 'package:bookna_app/core/di/di_locator.dart';
 import 'package:bookna_app/features/catalog/presentation/controller/author_cubit/author_cubit.dart';
-import 'package:bookna_app/features/catalog/presentation/widget/author_additional_info_widget.dart';
+import 'package:bookna_app/features/catalog/presentation/widget/author_info/author_additional_info_widget.dart';
 import 'package:bookna_app/features/catalog/presentation/widget/author_header_widget.dart';
-import 'package:bookna_app/features/catalog/presentation/widget/author_rating_widget.dart';
+import 'package:bookna_app/features/catalog/presentation/widget/author_rating/author_rating_widget.dart';
 
-import 'package:bookna_app/features/catalog/presentation/widget/author_reading_stats_widget.dart.dart';
+import 'package:bookna_app/features/catalog/presentation/widget/author_stats/author_reading_stats_widget.dart';
 
-import 'package:bookna_app/features/catalog/presentation/widget/author_subjects_widget.dart.dart';
+import 'package:bookna_app/features/catalog/presentation/widget/author_subjects/author_subjects_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
